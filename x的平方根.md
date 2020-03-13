@@ -52,3 +52,19 @@ public:
 
 ## 解法三 牛顿法
 
+```cpp
+class Solution {
+public:
+    int mySqrt(int x) {
+        if(x==0||x==1)  return x;
+        double cur=1.0;
+        double pre=cur;
+        while(true){
+            pre=cur;
+            cur=(cur+x/cur)/2;
+            if(abs(pre-cur)<1e-6)
+                return int(cur);
+        }
+    }
+};
+```
